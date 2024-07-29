@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>U BUS</title>
+
+    <!-- slider stylesheet -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"
+    />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- أنماط مخصصة لهذا القالب -->
+    <!-- ورقة أنماط Leaflet للخريطة -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      /*  الخريطة مع الابعاد و الحجم */
+      #map {
+        block-size: 600px;
+        inline-size: 100%;
+        margin: auto;
+      }
+      /*اتجاه الشريط العلوي في الشاشة*/
+      body {
+        direction: rtl;
+      }
+      /*   الأزرار */
+      .buttons {
+        text-align: center;
+        margin: 20px;
+      }
+      /* نمط كل زر */
+      .buttons button {
+        margin: 5px;
+        padding: 10px;
+        background-color: #0e394f;
+        border-radius: 20px;
+        color: #d8d4d4;
+      }
+      /* نمط زر بدء الرحلة */
+      .start-button {
+        text-align: center;
+        margin-block-start: 20px;
+      }
+      /*لضبط زر بدء الرحلة و لون الزر مع مكان تواجده*/
+      .start-button button {
+        padding: 10px 20px;
+        background-color: #0e394f;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        inline-size: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/logo.png" alt="" />
+              <span> U BUS </span>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div
+                class="d-flex ml-auto flex-column flex-lg-row align-items-center"
+              >
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html"
+                      >الصفحة الرئيسية<span class="sr-only">(current)</span></a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="current_trip.html">
+                      الرحل الحالية
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="past_trips.html">
+                      الرحلات السابقة
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      style="background-color: red"
+                      class="nav-link"
+                      href="Log out.html"
+                      >تسجيل خروج
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!--  الخريطة -->
+      <div id="map"></div>
+
+      <!-- زر بدء الرحلة -->
+      <div class="start-button">
+        <button onclick="startJourney()">بدء الرحلة</button>
+      </div>
+
+      <!-- سكريبت جQuery -->
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <!-- سكريبت البوتستراب -->
+      <script src="js/bootstrap.js"></script>
+      <!-- سكريبت Leaflet للخريطة -->
+      <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+      <script>
+        // تهيئة الخريطة وتعيين عرضها إلى وسط دمشق
+        var map = L.map("map").setView([33.5138, 36.2765], 12); // إحداثيات وسط دمشق
+
+        // إضافة طبقة التجانب إلى الخريطة
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        // وظيفة لبدء الرحلة والتنقل إلى صفحة أخرى
+        function startJourney() {
+          window.location.href = "current_trip.html"; // تعديل هذا الرابط حسب اسم صفحة الرحلة
+        }
+      </script>
+    </div>
+  </body>
+</html>

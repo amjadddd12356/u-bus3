@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> U BUS </title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="">
+            <span>
+             U BUS
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="index.html">الصفحة الرئيسية <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="current_trip.html"> الرحل الحالية </a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="past_trips.html"> الرحلات السابقة </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a style="background-color: red;" class="nav-link" href="Log out.html">تسجيل خروج</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <body>
+    <style>
+       /* قاعدة أساسية للخطوط  مع اتجاه الشريط العلوي*/
+     body {
+      font-family: 'Poppins', sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #0c0c0c;
+  }
+  
+  /* تنسيق العناوين */
+  h1 {
+      text-align: center;
+      margin-block-start: 20px;
+  }
+  
+  /* تنسيق الجداول */
+  table {
+      inline-size: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: #1a5d7f; /* لون الجدول */
+  }
+  
+  th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+  }
+  
+  th {
+      background-color: #0e394f; /* لون ترويسة الجدول */
+      color: #d8d4d4; /* لون النص داخل ترويسة الجدول */
+  }
+  
+  td {
+      color: #d8d4d4; /* لون النص داخل الجدول */
+  }
+  
+  input[type="number"] {
+      inline-size: 80%;
+      padding: 5px;
+      text-align: center;
+      background-color: #1a5d7f; /* لون خلفية المدخل */
+      color: #d8d4d4; /* لون النص داخل المدخل */
+      border: none;
+  }
+  
+  /* تنسيق الأزرار */
+  button {
+      display: block;
+      inline-size: 80%;
+      padding: 10px;
+      margin: 20px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+  }
+  
+  /* تصميم متجاوب مع الهاتف*/
+  @media screen and (max-inline-size: 600px) {
+      table, th, td {
+          font-size: 14px;
+      }
+  
+      button {
+          inline-size: 100%;
+          padding: 12px;
+          font-size: 18px;
+      }
+  }
+  
+  /* Styles for emergency modal */
+  #emergencyModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #emergencyModalContent {
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    #emergencyModalContent ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #emergencyModalContent ul li {
+      margin: 10px 0;
+    }
+
+    /* SOS Button Styles */
+    .sos-button {
+      background-color: red;
+      color: #d8d4d4;
+      border-radius: 20px;
+      inline-size: 50%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      padding: 5px;
+      font-weight: 900;
+      position: fixed;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    </style>
+   
+    <center>
+      <h1 style="color: #0e394f;">الرحلات السابقة</h1>
+    </center>
+      <table border="1">
+          <thead>
+              <tr>
+                  <th>اسم الخط</th>
+                  <th>التاريخ الرحلة</th>
+                  <th>موعد البدء</th>     
+                  <th>موعد الوصول</th>
+                  <th>عدد الطلاب</th>
+                 
+              </tr>
+          </thead>
+          <tbody id="past-trips-table">
+              <!-- ستضاف الرحلات هنا بواسطة JavaScript -->
+          </tbody>
+      </table>
+       <!-- Emergency Button at the Bottom -->
+  <button class="sos-button" onclick="showEmergencyContacts()">
+    <h5>SOS</h5>
+  </button>
+
+  <!-- Emergency Modal -->
+  <div id="emergencyModal">
+    <div id="emergencyModalContent">
+      <span style="color: red; font-weight: bold; float: right; cursor: pointer;" onclick="closeEmergencyContacts()">&times;</span>
+      <h2>Emergency Contacts</h2>
+      <ul>
+        <li><a href="tel:0998563061">Manager 1: 0998563061</a></li>
+        <li><a href="tel:0951333605">Manager 2: 0951333605</a></li>
+        <li><a href="tel:0939959118">Manager 3: 0939959118</a></li>
+      </ul>
+    </div>
+      <script src="script.js"></script>
+      <!-- سكريبت جQuery -->
+   <script src="js/jquery-3.4.1.min.js"></script>
+   <!-- سكريبت البوتستراب -->
+   <script src="js/bootstrap.js"></script>
+   <script>
+    function showEmergencyContacts() {
+      document.getElementById('emergencyModal').style.display = 'flex';
+    }
+
+    function closeEmergencyContacts() {
+      document.getElementById('emergencyModal').style.display = 'none';
+    }
+  </script>
+  </body>
+  </html>
